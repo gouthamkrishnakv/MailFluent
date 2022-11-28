@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=mailfluent
+Exec=mailfluent
+Icon=com.crosine.MailFluent
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

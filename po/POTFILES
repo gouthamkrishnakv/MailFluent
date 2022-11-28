@@ -1,0 +1,6 @@
+data/com.crosine.MailFluent.desktop.in
+data/com.crosine.MailFluent.appdata.xml.in
+data/com.crosine.MailFluent.gschema.xml
+src/main.vala
+src/window.vala
+src/window.ui
