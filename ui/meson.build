@@ -4,7 +4,8 @@
 
 blueprints = custom_target('blueprints',
   input: files(
-    'MainWindow.blp'
+    'MainWindow.blp',
+    'SideBar.blp'
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -16,4 +17,3 @@ ui_resources += gnome.compile_resources('com.crosine.MailFluent.UI',
   dependencies: blueprints,
   c_name: 'mailfluent_ui'
 )
-

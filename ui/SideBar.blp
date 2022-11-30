@@ -1,0 +1,17 @@
+using Gtk 4.0;
+using Adw 1;
+
+template MailFluentSideBar : Adw.Bin {
+  Box {
+    valign: center;
+    vexpand: true;
+    width-request: 128;
+    orientation: vertical;
+
+    Adw.StatusPage {
+      icon-name: "com.crosine.MailFluent";
+      title: "Sidebar";
+      description: "This is a sidebar!";
+    }
+  }
+}

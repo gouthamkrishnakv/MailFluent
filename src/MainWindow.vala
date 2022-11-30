@@ -1,6 +1,10 @@
 
 [GtkTemplate (ui = "/com/crosine/MailFluent/ui/MainWindow.ui")]
-public class MainWindow : Adw.ApplicationWindow {
+public class MailFluent.MainWindow : Adw.ApplicationWindow {
+
+  [GtkChild]
+  private unowned SideBar sidebar;
+
   // Main Window
   public MainWindow (Gtk.Application app) {
     Object (application: app);

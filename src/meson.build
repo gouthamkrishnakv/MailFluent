@@ -1,7 +1,8 @@
 mailfluent_sources = [
   'main.vala',
   'Application.vala',
-  'MainWindow.vala'
+  'MainWindow.vala',
+  'SideBar.vala'
 ]
 
 mailfluent_deps = [
@@ -19,5 +20,3 @@ executable('mailfluent', mailfluent_sources,
   ],
   install: true,
 )
-
-

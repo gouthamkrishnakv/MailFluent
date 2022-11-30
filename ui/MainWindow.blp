@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template MainWindow : Adw.ApplicationWindow {
+template MailFluentMainWindow : Adw.ApplicationWindow {
   default-width: 1280;
   default-height: 720;
   title: _("MailFluent");
@@ -14,6 +14,7 @@ template MainWindow : Adw.ApplicationWindow {
         orientation: vertical;
         width-request: 256;
         // Side pane HeaderBar
+        [start]
         Adw.HeaderBar side_header_bar {
           show-end-title-buttons: false;
           show-start-title-buttons: true;
@@ -29,6 +30,9 @@ template MainWindow : Adw.ApplicationWindow {
             }
           }
         }
+        // // Side pane
+        [start]
+        .MailFluentSideBar sidebar {}
       }
 
       [separator]
@@ -43,7 +47,7 @@ template MainWindow : Adw.ApplicationWindow {
         // Main HeaderBar
         HeaderBar main_header_bar {
           [start]
-          ToggleButton {
+          ToggleButton sidebar_toggle {
             active: bind main_flap.reveal-flap bidirectional;
             tooltip-text: "Toggle sidebar";
 

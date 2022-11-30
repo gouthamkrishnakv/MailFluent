@@ -18,7 +18,7 @@ public class Application : Adw.Application {
     base.activate ();
     Gtk.Window win = this.active_window;
     if (win == null) {
-      win = new MainWindow (this);
+      win = new MailFluent.MainWindow (this);
     }
     win.present ();
   }
