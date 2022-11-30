@@ -41,9 +41,4 @@ public class Application : Adw.Application {
   private void on_preferences_action () {
     message ("app.preferences action activated");
   }
-
-  // Compose Clicked
-  public void compose_clicked() {
-    stdout.printf("Compose Clicked");
-  }
 }
