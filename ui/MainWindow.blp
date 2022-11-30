@@ -1,25 +1,82 @@
 using Gtk 4.0;
 using Adw 1;
 
-template MailfluentWindow : Adw.ApplicationWindow {
-  default-width: 600;
-  default-height: 300;
+template MainWindow : Adw.ApplicationWindow {
+  default-width: 1280;
+  default-height: 720;
+  title: _("MailFluent");
 
-  Box {
-    orientation: vertical;
+  Adw.ToastOverlay toast_overlay {
+    Adw.Flap main_flap {
+      [flap]
+      Box side_pane {
+        styles ["background"]
+        orientation: vertical;
+        width-request: 256;
+        // Side pane HeaderBar
+        Adw.HeaderBar side_header_bar {
+          show-end-title-buttons: false;
+          show-start-title-buttons: true;
 
-    HeaderBar header_bar {
-      [end]
-      MenuButton {
-        icon-name: "open-menu-symbolic";
-        tooltip-text: "Open Menu";
-        menu-model: primary_menu;
+          // Button: "Compose Message"
+          [start]
+          Button compose_message_button {
+            accessible-role: button;
+            tooltip-text: "Compose a message";
+            clicked => compose_clicked();
+            Adw.ButtonContent {
+              icon-name: "compose-symbolic";
+            }
+          }
+        }
       }
-    }
 
-    Label label {
-      label: "Hello, World!";
-      vexpand: true;
+      [separator]
+      Separator {}
+
+      [content]
+      Box main_pane {
+
+        orientation: vertical;
+        width-request: 384;
+        
+        // Main HeaderBar
+        HeaderBar main_header_bar {
+          [start]
+          ToggleButton {
+            active: bind main_flap.reveal-flap bidirectional;
+            tooltip-text: "Toggle sidebar";
+
+            Adw.ButtonContent {
+              icon-name: "sidebar-show-symbolic";
+            }
+          }
+
+          [title]
+          DropDown {
+            halign: center;
+            model: StringList {
+              strings ["gauthamkrishna9991@live.com", "egar.allen@poe.com"]
+            };
+          }
+          
+          // Menu Button
+          [end]
+          MenuButton {
+            icon-name: "open-menu-symbolic";
+            tooltip-text: "Open Menu";
+            accessible-role: menu;
+            menu-model: primary_menu;
+          }
+        }
+
+        Adw.StatusPage {
+          vexpand: true;
+          icon-name: "com.crosine.MailFluent";
+          title: "MailFluent";
+          description: "A good looking mail application!";
+        }
+      }
     }
   }
 }

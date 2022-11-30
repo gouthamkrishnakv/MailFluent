@@ -1,7 +1,7 @@
 mailfluent_sources = [
   'main.vala',
   'Application.vala',
-  'MainWindow.vala',
+  'MainWindow.vala'
 ]
 
 mailfluent_deps = [

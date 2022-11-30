@@ -12,7 +12,7 @@ blueprints = custom_target('blueprints',
 
 
 ui_resources += gnome.compile_resources('com.crosine.MailFluent.UI',
-  'mailfluent.ui.gresource.xml',
+  'com.crosine.MailFluent.UI.gresource.xml',
   dependencies: blueprints,
   c_name: 'mailfluent_ui'
 )

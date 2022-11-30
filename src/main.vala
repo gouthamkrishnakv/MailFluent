@@ -1,5 +1,5 @@
 
 int main (string[] args) {
-    var app = new Mailfluent.Application ();
+    var app = new Application ();
     return app.run (args);
 }
