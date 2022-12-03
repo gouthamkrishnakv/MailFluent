@@ -1,0 +1,6 @@
+# Blueprint Compiler
+blueprint-compiler/
+# PackageCache
+packagecache/
+# SQLite
+sqlite*/
