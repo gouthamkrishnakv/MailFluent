@@ -1,0 +1,52 @@
+using Gtk 4.0;
+
+ListBox thread_list {
+  styles ["navigation-sidebar"]
+  
+  // Thread Item
+  Box {
+    styles ["thread_row"]
+    orientation: horizontal;
+    spacing: 4;
+    
+    // Actions
+    Box thread_item_actions {
+      styles []
+      orientation: vertical;
+      homogeneous: true;
+      vexpand: true;
+      
+      // Unread Indicator + Make Unread Button (Blue icon for unread)
+      [start]
+      Button { styles ["flat"] Image {icon-name: "mail-unread-symbolic"; } }
+      [end]
+      Button { styles ["flat"] Image {icon-name: "star-outline-thick-symbolic"; } }
+    }
+
+    // Text Content
+    Box thread_item_text {
+      orientation: vertical;
+      halign: start;
+      hexpand: true;
+      spacing: 4;
+
+      // Title: Author Name + Attachment (T/F) + Date of sending
+      [start]
+      Box thread_title {
+        hexpand: true;
+        spacing: 8;
+        // Author Name
+        Label thread_author {label: "John Doe"; ellipsize: end; wrap: true; }
+        Separator { styles ["thread_row_sep"] hexpand: true; }
+        // Shows whether mail is attached or not.
+        Image thread_has_attachment { icon-name: "mail-attachment-symbolic"; }
+        // Label shows the date.
+        Label thread_date { styles ["dimmed", "numeric"] label: "Sun 20:22";}
+      }
+      [start]
+      Label thread_ { styles ["thread_ro  w_title"] label: "Re: Explain how to pull water from the well"; halign: start; ellipsize: end; wrap: true; }
+      [end]
+      Label { styles [] lines: 2; label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque ultricies lorem, vel rutrum ex facilisis id. Mauris pulvinar erat leo, vel accumsan diam aliquam ac. Aenean at porta urna."; halign: start; ellipsize: end; wrap: true; }
+    }
+  }
+}

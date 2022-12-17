@@ -3,6 +3,7 @@
   <gresource prefix="/com/crosine/MailFluent/ui">
     <file preprocess="xml-stripblanks">MainWindow.ui</file>
     <file preprocess="xml-stripblanks">SideBar.ui</file>
+    <file preprocess="xml-stripblanks">MainPane.ui</file>
   </gresource>
   <gresource prefix="/com/crosine/MailFluent/icons/scalable/actions">
     <file alias="compose-symbolic.svg">icons/scalable/actions/compose-symbolic.svg</file>

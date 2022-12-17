@@ -63,3 +63,6 @@ release/
 
 # VSCode
 .vscode/
+
+# MailFluent Specific Creds
+.mailfluent_creds

@@ -2,6 +2,7 @@
 
 # App Dependencies
 mailfluent_deps = [
+  dependency('gio-2.0'),
   dependency('gtk4'),
   dependency('libadwaita-1'),
   dependency('sqlite3')
@@ -9,12 +10,13 @@ mailfluent_deps = [
 
 # App Source Files
 mailfluent_sources = [
-  'main.vala',
+  'Main.vala',
   # `Config.vala` generated from `Config.vala.in` by applying configuration
   'Config.vala',
   'Application.vala',
   'MainWindow.vala',
-  'SideBar.vala'
+  'SideBar.vala',
+  'MainPane.vala'
 ]
 
 # Add UI Resources
@@ -25,8 +27,9 @@ data_dir = join_paths(get_option('prefix'), get_option('datadir'), meson.project
 
 # Initialize Configuration Data
 conf = configuration_data()
-# Set AppData Directory
+# Set AppData Directory)
 conf.set('DATADIR', data_dir)
+conf.set('VERSION', meson.project_version())
 
 # Apply Configurations
 configure_file(

@@ -1,0 +1,28 @@
+.mail_thread {
+    padding: 8px 0px 8px 0px;
+  }
+  
+  .mail_thread_main {
+    padding: 0px 04px 0px 04px;
+  }
+  
+  .mail_thread_from {}
+  
+  .mail_thread_has_attachment {
+    padding: 0px 4px 0px 4px;
+  }
+  
+  .mail_thread_unread {
+    font-weight: bold;
+  }
+  
+  .mail_thread_unread_mail {
+    color: #78aeed;
+  }
+  
+  .mail_thread_sent {
+    padding: 0px 4px 0px 4px;
+  }
+  
+  .mail_thread_subject {}
+  

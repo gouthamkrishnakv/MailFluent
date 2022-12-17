@@ -74,12 +74,7 @@ template MailFluentMainWindow : Adw.ApplicationWindow {
           }
         }
 
-        Adw.StatusPage {
-          vexpand: true;
-          icon-name: "com.crosine.MailFluent";
-          title: "MailFluent";
-          description: "A good looking mail application!";
-        }
+        .MailFluentMainPane main_app_pane {}
       }
     }
   }

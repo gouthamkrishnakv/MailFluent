@@ -1,0 +1,143 @@
+using Gtk 4.0;
+
+ListBox {
+  styles ["navigation-sidebar"]
+  Box {
+    styles ["mail_thread"]
+    orientation: horizontal;
+    
+    Box mail_thread_actions {
+      orientation: vertical;
+      halign: center;
+      
+      // Unread Indicator + "Make Unread" Button (Blue for unread)
+      [start]
+      Button {
+        styles ["flat", "circular"]
+        Image {
+          icon-name: "mail-unread-symbolic";
+        }
+      }
+      [end]
+      Button {
+        styles ["flat", "circular"]
+        Image {
+          icon-name: "star-outline-thick-symbolic";
+        }
+      }
+    }
+    
+    Separator { opacity: 0; width-request: 4; }
+    
+    // Main Content
+    Box mail_thread_main {
+      styles ["mail_thread_main"]
+      orientation: vertical;
+      hexpand: true;
+      halign: center;
+      // Thread Title (From, Attachment and Sent Date)
+      [start]
+      Box mail_thread_title {
+        hexpand: true;
+        Label mail_thread_from {
+          styles ["mail_thread_from"]
+          label: "John Doe";
+        }
+        Separator {  opacity: 0; hexpand: true;  }
+        Image mail_thread_has_attachment { styles ["accent", "mail_thread_has_attachment"] icon-name: "mail-attachment-symbolic";}
+        [end]
+        Label mail_thread_sent {
+          styles ["dimmed","numeric", "mail_thread_sent"]
+          label: "Sun 20:22";
+        }
+      }
+      // Thread Subject
+      [start]
+      Label mail_thread_subject {
+        styles ["mail_thread_subject"]
+        label: "Re: Query about fun content in the strawberry chocolate cake.";
+        hexpand: true;
+        halign: start;
+        ellipsize: end;
+        wrap: true;
+      }
+      [start]
+      Label mail_thread_body {
+        label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque ultricies lorem, vel rutrum ex facilisis id. Mauris pulvinar erat leo, vel accumsan diam aliquam ac. Aenean at porta urna.";
+        lines: 2;
+        halign: start;
+        ellipsize: end;
+        wrap: true;
+      }
+    }
+  }
+  
+    Box {
+    styles ["mail_thread", "mail_thread_unread"]
+    orientation: horizontal;
+    
+    Box mail_uthread_actions {
+      orientation: vertical;
+      halign: center;
+      
+      // Unread Indicator + "Make Unread" Button (Blue for unread)
+      [start]
+      Button {
+        styles ["flat", "circular", "mail_thread_unread_mail"]
+        Image {
+          icon-name: "mail-unread-symbolic";
+        }
+      }
+      [end]
+      Button {
+        styles ["flat", "circular"]
+        Image {
+          icon-name: "star-outline-thick-symbolic";
+        }
+      }
+    }
+    
+    
+    // Main Content
+    Box umail_thread_main {
+      styles ["mail_thread_main"]
+      orientation: vertical;
+      hexpand: true;
+      halign: center;
+      // Thread Title (From, Attachment and Sent Date)
+      [start]
+      Box umail_thread_title {
+        hexpand: true;
+        Label uthread_from {
+          styles ["mail_thread_from"]
+          label: "John Doe";
+        }
+        Separator {  opacity: 0; hexpand: true;  }
+        Image umail_thread_has_attachment { styles ["accent", "mail_thread_has_attachment"] icon-name: "mail-attachment-symbolic";}
+        [end]
+        Label umail_thread_sent {
+          styles ["dimmed","numeric", "mail_thread_sent"]
+          label: "Sun 20:22";
+        }
+      }
+      // Thread Subject
+      [start]
+      Label umail_thread_subject {
+        styles ["mail_thread_subject"]
+        label: "Re: Query about fun content in the strawberry chocolate cake.";
+        hexpand: true;
+        halign: start;
+        ellipsize: end;
+        wrap: true;
+      }
+      [start]
+      Label umail_thread_body {
+        label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque ultricies lorem, vel rutrum ex facilisis id. Mauris pulvinar erat leo, vel accumsan diam aliquam ac. Aenean at porta urna.";
+        lines: 2;
+        halign: start;
+        ellipsize: end;
+        wrap: true;
+      }
+    }
+  }
+}

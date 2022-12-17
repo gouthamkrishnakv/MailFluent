@@ -1,0 +1,29 @@
+using Gtk 4.0;
+using Adw 1;
+
+template MailFluentMainPane : Box {
+  // Box {
+  //   valign: center;
+  //   vexpand: true;
+  //   width-request: 128;
+  //   orientation: vertical;
+
+  //   Adw.StatusPage main_pane_statuspage {
+  //     vexpand: true;
+  //     icon-name: "com.crosine.MailFluent";
+  //     title: "MailFluent";
+  //     description: "A good looking mail application!";
+  //   }
+  // }
+  vexpand: true;
+  hexpand: true;
+
+  Adw.StatusPage status_page {
+    // Alignment
+    hexpand: true;
+    // App Icon Names
+    icon-name: "com.crosine.MailFluent";
+    title: "MailFluent";
+    description: "A good looking mail application!";
+  }
+}

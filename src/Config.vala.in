@@ -8,4 +8,5 @@
 
 class Config {
     public const string DATADIR = "@DATADIR@";
+    public const string VERSION = "@VERSION@";
 }
