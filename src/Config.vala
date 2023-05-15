@@ -7,6 +7,6 @@
  **/
 
 class Config {
-    public const string DATADIR = "/usr/local/share/mailfluent";
+    public const string DATADIR = "/app/share/mailfluent";
     public const string VERSION = "0.1.0";
 }

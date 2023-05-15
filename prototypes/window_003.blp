@@ -1,0 +1,159 @@
+using Gtk 4.0;
+using Adw 1;
+
+// Content Box: Thread Pane + Reading Pane
+Box content_box {
+  orientation: vertical;
+  width-request: 360;
+
+  // Application Headerbar
+  [start]
+  Adw.HeaderBar {
+    show-end-title-buttons: true;
+    show-start-title-buttons: false;
+
+    [title]
+    Adw.WindowTitle {
+      title: "ForgeMail";
+      subtitle: "gauthamkrishna9991@live.com";
+    }
+
+    [start]
+    ToggleButton {
+      // active: bind flap.reveal-flap bidirectional;
+
+      Adw.ButtonContent {
+        icon-name: "sidebar-show-symbolic";
+      }
+    }
+    [start]
+    SearchEntry {
+      width-request: 150;
+      placeholder-text: "Search john.doe@example.com";
+    }
+  }
+
+  // Thread Pane
+  [start]
+  Adw.Leaflet thread_pane {
+    Revealer {
+      transition-type: slide_right;
+      reveal-child: true;
+
+      ScrolledWindow {
+        vexpand: true;
+        width-request: 400;
+
+        ListBox thread_list {
+          styles ["navigation-sidebar"]
+          // Single Thread Row
+          ListBoxRow row1 {
+            styles ["thread_row", "thread_row_unread"]
+            // Main Box
+            Box {
+              orientation: vertical;
+              height-request: 100;
+              spacing: 10;
+
+              // First Line Box
+              Box {
+                orientation: horizontal;
+                valign: center;
+
+                [start]
+                Image { styles ["thread_row_unread_indicator"] icon-name: "dot-symbolic"; }
+
+                [start]
+                Label { styles ["thread_row_author"] label: "John Doe";}
+
+                Separator { styles ["thread_row_sep", "background"] hexpand: true; }
+
+                [end]
+                Label {
+                  styles ["thread_row_timestamp"]
+                  label: "August 20, 15:00";
+                }
+              }
+
+              Label {
+                styles ["thread_row_title"]
+                halign: start;
+                label: "Re: It was amazing last day!";
+              }
+              Label {
+                ellipsize: end;
+                label: "Hi! Please find the attached transmittal summary of this application";
+                halign: start;
+              }
+            }
+          }
+
+            // Single Thread Row
+          ListBoxRow {
+            styles ["thread_row"]
+            // Main Box
+            Box {
+              orientation: vertical;
+              height-request: 100;
+              spacing: 10;
+
+              // First Line Box
+              Box {
+                orientation: horizontal;
+                valign: center;
+                [start]
+                Image { styles ["thread_row_unread_indicator"] icon-name: "dot-symbolic"; }
+                [start]
+                Label { styles ["thread_row_author"] label: "Jane Doe"; }
+
+                Separator { styles ["thread_row_sep", "background"] hexpand: true; }
+
+                [end]
+                Label {
+                  styles ["thread_row_timestamp"]
+                  label: "August 20, 15:00";
+                }
+              }
+
+              Label {
+                styles ["thread_row_title"]
+                halign: start;
+                label: "Re: It was amazing last day!";
+              }
+              Label {
+                ellipsize: end;
+                label: "Hi! Please find the attached transmittal summary of this application";
+                halign: start;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Pane Separation
+    [start]
+    Separator {}
+
+    // Reading Pane
+    [start]
+    Adw.Leaflet reading_pane {
+      Revealer {
+        transition-type: slide_right;
+        reveal-child: true;
+        width-request: 256;
+
+        ScrolledWindow {
+          vexpand: true;
+          hexpand: true;
+
+          Adw.StatusPage {
+            icon-name: "mail-symbolic";
+            title: "ForgeMail";
+            description: "SLEEP B**CH";
+          }
+        }
+      }
+    }
+  }
+}

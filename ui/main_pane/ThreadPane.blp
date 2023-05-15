@@ -1,0 +1,17 @@
+using Gtk 4.0;
+using Adw 1;
+
+template MailFluentMainPaneThreadPane : Box {
+    orientation: horizontal;
+
+    Adw.Clamp {
+        width-request: 200;
+        Adw.StatusPage {
+            hexpand: true;
+            icon-name: "com.crosine.MailFluent";
+            title: "Thread Pane";
+            description: "This is where all the threads go";
+        }
+    }
+
+}
